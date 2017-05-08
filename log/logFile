@@ -1,0 +1,116 @@
+
+***** System Information: ***** 
+os.arch: amd64
+os.name: Linux
+os.version: 4.4.0-43-Microsoft
+java.version: 1.8.0_121
+
+
+*** Files Testing: *** 
+file size in bytes
+read time in ns
+write time in ns
+
+** ByteBuffer ** 
+
+file name: text1_10kB
+size: 10016
+read:  1387000
+write: 119000
+
+file name: text2_100kB
+size: 100151
+read:  210000
+write: 86000
+
+file name: text3_1MB
+size: 1001523
+read:  1204000
+write: 492000
+
+file name: text4_10MB
+size: 10015215
+read:  11394000
+write: 5077000
+
+** ByteBufferDirect ** 
+
+file name: text1_10kB
+size: 10016
+read:  36000
+write: 34000
+
+file name: text2_100kB
+size: 100151
+read:  61000
+write: 54000
+
+file name: text3_1MB
+size: 1001523
+read:  245000
+write: 383000
+
+file name: text4_10MB
+size: 10015215
+read:  3380000
+write: 3440000
+
+
+
+***** System Information: ***** 
+os.arch: amd64
+os.name: Linux
+os.version: 4.8.0-49-generic
+java.version: 1.8.0_121
+
+
+*** Files Testing: *** 
+file size in bytes
+read time in ns
+write time in ns
+
+** ByteBuffer ** 
+
+file name: text1_10kB
+size: 10016
+read:  982105
+write: 231951
+
+file name: text2_100kB
+size: 100151
+read:  674206
+write: 609918
+
+file name: text3_1MB
+size: 1001523
+read:  4383613
+write: 3918468
+
+file name: text4_10MB
+size: 10015215
+read:  42242667
+write: 38689639
+
+** ByteBufferDirect ** 
+
+file name: text1_10kB
+size: 10016
+read:  76425
+write: 95921
+
+file name: text2_100kB
+size: 100151
+read:  428909
+write: 536994
+
+file name: text3_1MB
+size: 1001523
+read:  3508320
+write: 4132662
+
+file name: text4_10MB
+size: 10015215
+read:  35469153
+write: 36531804
+
+
