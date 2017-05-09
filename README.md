@@ -1,4 +1,4 @@
-## Read and Write File with Buffers, AWSgit 
+## Read and Write File with Buffers, AWS
 File read and write in Java <br />
 Using Java NIO Buffer and Direct Buffer <br />
 Measure time of reading and writing files of different sizes <br />
