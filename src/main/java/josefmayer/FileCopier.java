@@ -16,11 +16,14 @@ public class FileCopier {
         File outboxDirectory = new File("data/outbox");
 
         File logDirectory = new File("log");
+        logDirectory.mkdir();
+
         File logFile = new File("log/logFile");
         FileOutputStream out = new FileOutputStream(logFile, true);
 
         outboxDirectory.mkdir();
-        logDirectory.mkdir();
+
+
 
         StringBuffer sb = new StringBuffer();
         sb.append("\n");
