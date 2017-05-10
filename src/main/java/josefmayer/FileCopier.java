@@ -8,10 +8,18 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 
 public class FileCopier {
 
     public  void readDirs() throws Exception{
+
+        System.setProperty("log4j.configurationFile","src/main/resources/log4j2.xml");
+        //System.setProperty("log4j.configurationFile","src/main/resources/log4j2.json");
+        Logger logger = LogManager.getLogger();
+
         File inboxDirectory = new File("data/inbox");
         File outboxDirectory = new File("data/outbox");
 
@@ -37,8 +45,6 @@ public class FileCopier {
         sb.append("file size in bytes\n");
         sb.append("read time in ns\n");
         sb.append("write time in ns\n");
-
-
 
         File[] files = inboxDirectory.listFiles();
 
@@ -70,6 +76,7 @@ public class FileCopier {
         System.out.println(sb);
         out.write(sb.toString().getBytes());
 
+        logger.info(sb.toString());
 
     }
 

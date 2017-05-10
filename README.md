@@ -7,11 +7,13 @@ Logging results to a file <br />
 Add Terraform project <br />
 Test on AWS EC2 instance with Ubuntu <br />
 
+Add Log4j2 Logger <br />
 
 
 ### Technologies
 JSE, Buffer, Direct Buffer, FileChannel <br />
-AWS, Terraform
+Log4j2 <br />
+AWS, Terraform <br />
 
 
 ### Steps
@@ -26,7 +28,6 @@ Run program on AWS with Terraform: <br />
 
 
 ### Results
-Results for 3 platforms in logFile: <br />
+Results for 2 platforms in logFiles: <br />
 Windows Subsystem for Linux (WSL Ubuntu 16.04) <br />
-VirtualBox Linux Ubuntu 6.04 Kernel 4.8 <br />
 AWS EC2 Linux Ubuntu 6.04 

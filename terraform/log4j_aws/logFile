@@ -1,8 +1,8 @@
-
+2017-05-10 09:56:16.516 [main] INFO  josefmayer.FileCopier - 
 ***** System Information: ***** 
 os.arch: amd64
 os.name: Linux
-os.version: 4.4.0-43-Microsoft
+os.version: 4.4.0-1013-aws
 java.version: 1.8.0_121
 
 
@@ -13,46 +13,47 @@ write time in ns
 
 ** ByteBuffer ** 
 
-file name: text1_10kB
-size: 10016
-read:  1304000
-write: 119000
-
 file name: text2_100kB
 size: 100151
-read:  180000
-write: 166000
+read:  2436717
+write: 153524
+
+file name: text1_10kB
+size: 10016
+read:  19941
+write: 22747
 
 file name: text3_1MB
 size: 1001523
-read:  1109000
-write: 462000
+read:  773974
+write: 604596
 
 file name: text4_10MB
 size: 10015215
-read:  11541000
-write: 5023000
+read:  6494280
+write: 5937833
 
 ** ByteBufferDirect ** 
 
-file name: text1_10kB
-size: 10016
-read:  33000
-write: 31000
-
 file name: text2_100kB
 size: 100151
-read:  39000
-write: 50000
+read:  26430
+write: 58143
+
+file name: text1_10kB
+size: 10016
+read:  8527
+write: 12910
 
 file name: text3_1MB
 size: 1001523
-read:  237000
-write: 323000
+read:  148616
+write: 499991
 
 file name: text4_10MB
 size: 10015215
-read:  3178000
-write: 3368000
+read:  1776590
+write: 4871041
+
 
 

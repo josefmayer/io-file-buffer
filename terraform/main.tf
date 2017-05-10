@@ -1,11 +1,13 @@
 variable private_key_path{
   description = "Path to the SSH private key to be used for authentication"
-  default = "~/.ssh/key_pair_aws_1_id_rsa"
+  default = "~/.ssh/id_rsa"
+  # default = "~/.ssh/key_pair_aws_1_id_rsa"
 }
 
 variable public_key_path{
   description = "Path to the SSH public key to be used for authentication"
-  default = "~/.ssh/key_pair_aws_1_id_rsa.pub"
+  default = "~/.ssh/id_rsa.pub"
+  # default = "~/.ssh/key_pair_aws_1_id_rsa.pub"
 }
 
 variable sftp_batch_path {
@@ -13,8 +15,8 @@ variable sftp_batch_path {
   default = "sftp_batchfile"
 }
 
-resource "aws_key_pair" "aws_test" {
-  key_name   = "aws_test"               # key pair name AWS
+resource "aws_key_pair" "aws_test_1" {
+  key_name   = "aws_test_1"               # key pair name AWS
   public_key = "${file(var.public_key_path)}"
 }
 
@@ -26,8 +28,8 @@ provider "aws" {
 #  cidr_block = "10.0.0.0/16"
 #}
 
-resource "aws_security_group" "aws_test" {
-  name        = "aws_test"
+resource "aws_security_group" "aws_test_1" {
+  name        = "aws_test_1"
   description = "Used in the terraform"
   # vpc_id      = "${aws_vpc.default.id}"
 
@@ -57,15 +59,15 @@ resource "aws_security_group" "aws_test" {
 }
 
 
-resource "aws_instance" "ec2_instance_test_buffer" {
+resource "aws_instance" "ec2_instance_test_buffer_log" {
   # ami = "ami-060cde69"
   ami = "ami-16b26c79"   # ami created with packer: ubuntu, java
 
   instance_type = "t2.micro"
 
-  key_name = "${aws_key_pair.aws_test.id}"
+  key_name = "${aws_key_pair.aws_test_1.id}"
 
-  vpc_security_group_ids = ["${aws_security_group.aws_test.id}"]
+  vpc_security_group_ids = ["${aws_security_group.aws_test_1.id}"]
 
 
   connection {
@@ -81,11 +83,14 @@ resource "aws_instance" "ec2_instance_test_buffer" {
     inline = [
       # "sudo apt-get -y update",
       # "sudo apt-get -y install openjdk-8-jre-headless",
-      "mkdir data",
-      "cd data",
-      "mkdir inbox",
-      "cd ..",
+      "mkdir -p src/main/resources",
+      "mkdir -p data/inbox",
     ]
+  }
+
+  provisioner "file" {
+    source      = "../src/main/resources/log4j2.xml"
+    destination = "~/src/main/resources/log4j2.xml"
   }
 
   # upload inbox directory content
@@ -109,13 +114,18 @@ resource "aws_instance" "ec2_instance_test_buffer" {
 
   provisioner "local-exec" {
     command =
-    "mkdir log_aws"
+    "mkdir -p log_aws"
+  }
+
+  provisioner "local-exec" {
+    command =
+    "mkdir -p log4j_aws"
   }
 
   # download logFile results
   provisioner "local-exec" {
     command =
-    "sftp -b ${var.sftp_batch_path} -i ${var.private_key_path} -o StrictHostKeyChecking=no ubuntu@${aws_instance.ec2_instance_test_buffer.public_dns}"
+    "sftp -b ${var.sftp_batch_path} -i ${var.private_key_path} -o StrictHostKeyChecking=no ubuntu@${aws_instance.ec2_instance_test_buffer_log.public_dns}"
   }
 
 

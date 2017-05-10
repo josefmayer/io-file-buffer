@@ -15,44 +15,44 @@ write time in ns
 
 file name: text2_100kB
 size: 100151
-read:  2301013
-write: 134621
+read:  2436717
+write: 153524
 
 file name: text1_10kB
 size: 10016
-read:  19289
-write: 25169
+read:  19941
+write: 22747
 
 file name: text3_1MB
 size: 1001523
-read:  812389
-write: 587525
+read:  773974
+write: 604596
 
 file name: text4_10MB
 size: 10015215
-read:  10385781
-write: 11637085
+read:  6494280
+write: 5937833
 
 ** ByteBufferDirect ** 
 
 file name: text2_100kB
 size: 100151
-read:  27864
-write: 1749178
+read:  26430
+write: 58143
 
 file name: text1_10kB
 size: 10016
-read:  13854
-write: 21093
+read:  8527
+write: 12910
 
 file name: text3_1MB
 size: 1001523
-read:  161396
-write: 484937
+read:  148616
+write: 499991
 
 file name: text4_10MB
 size: 10015215
-read:  1590487
-write: 8888063
+read:  1776590
+write: 4871041
 
 

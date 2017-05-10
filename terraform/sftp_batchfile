@@ -1,2 +1,3 @@
 get log/logFile log_aws/logFile
+get log4jLog/logFile log4j_aws/logFile
 bye
